@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>This is index.</title>
+    <title>This is vistaPrece.</title>
 </head>
 <body>
-    <h1>Index.</h1>
-    
+    <h1>vistaPrece</h1>
+    <h2>Nombre del preceptor: {{ user.first_name }} {{ user.last_name }}</h2>
+    <h2>DNI: {{ data.dni }}</h2>
+    <h2>Curso a cargo: <h2>
+    <a href="{% url 'loadLogOut' %}">Logout</a>   
 </body>
 </html>

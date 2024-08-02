@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>This is vistaEstudiante.</title>
+</head>
+<body>
+    <h1>vistaEstudiante</h1>
+    <h2>Nombre del Estudiante: {{ user.first_name }} {{ user.last_name }}</h2>
+    <h2>DNI: {{ data.dni }}</h2>
+    <h2>Nro de carnet: {{ data.nroCarnet}}</h2>
+    <h2>Curso perteneciente: </h2>
+    <h2>Responsable/s a cargo: </h2>
+    <a href="{% url 'loadLogOut' %}">Logout</a>  
+    
+</body>
+</html>

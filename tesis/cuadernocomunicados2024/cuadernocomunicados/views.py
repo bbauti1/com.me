@@ -8,9 +8,16 @@ from django.contrib.auth.models import User
 
 def index(request):
     if request.user.is_authenticated:
-        user = Student.objects.get(username=request.user.id)
-        print(user.dni)
-        return render(request, 'index.html', {'data':user})
+        user = Persona.objects.get(username=request.user.id)
+        if user.vista == "profesor":
+            return render(request, "vistaProfe.html", {'data':user})
+        elif user.vista == "preceptor":
+            return render(request, "vistaPrece.html", {'data':user})
+        elif user.vista == "responsable":
+            return render(request, "vistaResponsable.html" , {'data':user})
+        elif user.vista == "alumno": 
+            return render(request, "vistaEstudiante.html", {'data':user})
+       
     else:
         return redirect('loadLogin')
 
